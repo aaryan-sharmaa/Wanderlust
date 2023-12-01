@@ -72,11 +72,14 @@
     <% for(review of listing.reviews) { %>
     <div class="card col-5 ms-3 mb-3">
       <div class="card-body">
-        <h5 class="card-title">Neo Matrix</h5>
+        <h5 class="card-title mt-2">Neo Matrix</h5>
         <p class="card-text"><%= review.comment%></p>
-        <p class="card-text"><%= review.rating%>&#9733</p>
+        <p class="card-text mb-2"><%= review.rating%>&#9733</p>
       </div>
-    </div>
+      <form class="mb-3" method="POST" action="/listing/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
+        <button class="btn btn-dark btn-sm">Delete</button>
+      </form>
+    </div> 
     <% } %>
   </div>
   </div>
