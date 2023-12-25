@@ -24,7 +24,12 @@ router.get(
   wrapAsync(async (req, res) => {
     let { id } = req.params;
     const listing = await Listing.findById(id)
-      .populate("reviews")
+      .populate({
+        path: "reviews",
+        populate: {
+          path: "author",
+        },
+      })
       .populate("owner");
     if (!listing) {
       req.flash("error", "This listing does not exist!");
@@ -84,7 +89,7 @@ router.put(
 router.delete(
   "/:id",
   isLoggedIn,
-  isOwner, 
+  isOwner,
   wrapAsync(async (req, res) => {
     let { id } = req.params;
     const deletedListing = await Listing.findByIdAndDelete(id);
