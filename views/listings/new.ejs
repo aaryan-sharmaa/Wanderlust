@@ -2,7 +2,13 @@
 <div class="row mt-3">
   <div class="col-8 offset-2">
     <h3>Create a New Listing</h3>
-    <form method="POST" action="/listings" class="needs-validation" novalidate>
+    <form
+      method="POST"
+      action="/listings"
+      class="needs-validation"
+      novalidate
+      enctype="multipart/form-data"
+    >
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input
@@ -26,12 +32,12 @@
         <div class="invalid-feedback">Please enter a short description</div>
       </div>
       <div class="mb-3">
-        <label for="image" class="form-label">Image Link</label>
+        <label for="image" class="form-label">Upload Listing Image</label>
         <input
           name="listing[image]"
-          type="text"
-          placeholder="Add image URL"
+          type="file" 
           class="form-control"
+          required
         />
       </div>
 
