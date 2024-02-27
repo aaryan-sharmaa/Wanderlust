@@ -6,7 +6,7 @@ Welcome to Wanderlust, a full-stack project built using Node.js, Express, and Mo
 
 To get started with Wanderlust on your local machine, follow these steps:
 
-1. Clone the repository from GitHub:
+Clone the repository from GitHub:
    ```bash
    git clone https://github.com/aaryan-sharmaa/Wanderlust.git
    cd Wanderlust
