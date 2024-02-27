@@ -36,6 +36,3 @@ Open your browser and navigate to `http://localhost:3000` to view the applicatio
 
 Contributions are welcome! If you'd like to contribute to Wanderlust, please fork the repository, make your changes, and submit a pull request.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
