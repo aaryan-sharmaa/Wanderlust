@@ -13,7 +13,7 @@ Clone the repository from GitHub:
    npm install
    npm start
 ```
-Open your browser and navigate to `http://localhost:3000` to view the application.
+Open your browser and navigate to `http://localhost:3000/listings` to view the application.
 
 ## Features
 
