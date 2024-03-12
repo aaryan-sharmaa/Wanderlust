@@ -3,7 +3,8 @@
     background-color: #fe424d;
     color: #fff;
     border-radius: 25px;
-    padding: 0 1rem 0 1rem;
+    padding: 0 1rem;
+    z-index: 1000;
   }
   .search-btn:hover {
     background-color: #fe424d;
@@ -13,10 +14,24 @@
     display: inline;
     margin-right: 0.5rem;
   }
-  .search-inp{
+  .search-inp {
     border-radius: 25px;
-    padding: 0.5rem 3rem 0.5rem 3rem;
+    padding: 0.5rem 2rem;
     font-size: 1rem;
+    z-index: 1000;
+  }
+
+  @media (max-width: 768px) {
+    .search-inp {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+  }
+  
+  .navbar-collapse {
+    z-index: 999;
+    background-color: #fff;
+    border: none; 
   }
 </style>
 
