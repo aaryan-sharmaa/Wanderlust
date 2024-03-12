@@ -1,15 +1,22 @@
 <% layout('/layouts/boilerplate') -%>
 <style>
+  #filters-container {
+    margin-bottom: 0.5rem; 
+    margin-top: 1rem; 
+    overflow-x: auto; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+  }
   #filters {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
   }
   .filter {
     text-align: center;
-    margin-right: 2rem;
-    margin-top: 2rem;
+    margin-right: 1rem; 
     opacity: 0.7;
+    flex-shrink: 0;
   }
   .filter:hover {
     opacity: 1;
@@ -27,53 +34,60 @@
     border-radius: 1rem;
     height: 3rem;
     padding: 1rem;
-    margin-left: 2rem;
     display: flex;
     align-items: center;
   }
-</style>
-<div id="filters">
-  <div class="filter">
-    <div><i class="fa-solid fa-fire"></i></div>
-    <p>Trending</p>
-  </div>
-  <div class="filter">
-    <div><i class="fa-solid fa-mountain-city"></i></div>
-    <p>Iconic cities</p>
-  </div>
-  <div class="filter">
-    <div><i class="fa-regular fa-snowflake"></i></div>
-    <p>Arctic</p>
-  </div>
-  <div class="filter">
-    <div><i class="fa-solid fa-mountain"></i></div>
-    <p>Mountain</p>
-  </div>
-  <div class="filter">
-    <div><i class="fa-solid fa-umbrella-beach"></i></div>
-    <p>Beach</p>
-  </div>
-  <div class="filter">
-    <div><i class="fa-brands fa-fort-awesome"></i></div>
-    <p>Castle</p>
-  </div>
-  <div class="filter">
-    <div><i class="fa-solid fa-water"></i></div>
-    <p>Lakefront</p>
-  </div>
-  <div class="filter">
-    <div><i class="fa-solid fa-tree-city"></i></div>
-    <p>Luxe</p>
-  </div>
-  <div class="filter">
-    <div><i class="fa-solid fa-igloo"></i></div>
-    <p>Dome</p>
-  </div>
-  <div class="filter">
-    <div><i class="fa-solid fa-house-chimney"></i></div>
-    <p>Cabins</p>
-  </div>
 
+  /* Hide tax toggle on small screens */
+  @media (max-width: 576px) {
+    .tax-toggle {
+      display: none;
+    }
+  }
+</style>
+<div id="filters-container">
+  <div id="filters">
+    <div class="filter">
+      <div><i class="fa-solid fa-fire"></i></div>
+      <p>Trending</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-mountain-city"></i></div>
+      <p>Iconic cities</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-regular fa-snowflake"></i></div>
+      <p>Arctic</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-mountain"></i></div>
+      <p>Mountain</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-umbrella-beach"></i></div>
+      <p>Beach</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-brands fa-fort-awesome"></i></div>
+      <p>Castle</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-water"></i></div>
+      <p>Lakefront</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-tree-city"></i></div>
+      <p>Luxe</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-igloo"></i></div>
+      <p>Dome</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-house-chimney"></i></div>
+      <p>Cabins</p>
+    </div>
+  </div>
   <div class="tax-toggle">
     <div class="form-check-reverse form-switch">
       <input
@@ -89,7 +103,7 @@
   </div>
 </div>
 
-<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1" style="margin-bottom: 1rem;">
   <% for(let listing of allListings) { %>
   <a href="/listings/<%= listing._id %>" class="listing-link">
     <div class="card col listing-card">
@@ -109,7 +123,6 @@
       </div>
     </div>
   </a>
-
   <% } %>
 </div>
 
@@ -118,12 +131,11 @@
   taxSwitch.addEventListener("click", () => {
     let taxInfo = document.getElementsByClassName("tax-info");
     for (info of taxInfo) {
-      if(info.style.display != "inline" ) {
-        info.style.display = "inline"
+      if (info.style.display != "inline") {
+        info.style.display = "inline";
       } else {
         info.style.display = "none";
       }
-      
     }
   });
 </script>
