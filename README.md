@@ -1,6 +1,6 @@
 # Wanderlust
 
-Welcome to Wanderlust, a full-stack project built using Node.js, Express, and MongoDB! Wanderlust is a web application designed to help users discover and explore exciting travel destinations.
+Welcome to Wanderlust, an Airbnb inspired full-stack project built using Node.js, Express, and MongoDB! Wanderlust is a web application designed to help users discover and explore exciting travel destinations.
 
 ## Installation
 
